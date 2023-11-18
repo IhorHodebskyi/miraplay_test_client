@@ -1,13 +1,9 @@
-import { getGames } from 'api/api';
-import { useQuery } from 'react-query';
 import { Layout } from './Layout/Layout';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 
 export const App = () => {
-  const { data } = useQuery('coins', getGames);
-  console.log(data);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
